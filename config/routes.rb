@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'cards_controller/show_all'
+  resources :cards
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

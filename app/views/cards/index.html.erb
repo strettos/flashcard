@@ -6,9 +6,13 @@
 <body>
   <section id="container">
     <section>
-      <p style="font-size: 22px;">
-        Первый в мире удобный менеджер флеш-карточек. Именно так.
-      </p>
+      <% @cards.each do |card| %>
+      <ul>
+        <li><%= card.original_text %></li>
+        <li><%= card.translated_text %></li>
+      </ul>
+    <% end %>
     </section>
+
   </section>
 </body>
