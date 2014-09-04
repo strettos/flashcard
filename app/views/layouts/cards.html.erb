@@ -1,0 +1,11 @@
+ <section id="container">
+    <section>
+      <% @cards.each do |card| %>
+      <ul>
+        <li><%= card.original_text %></li>
+        <li><%= card.translated_text %></li>
+      </ul>
+    <% end %>
+    </section>
+
+  </section>
