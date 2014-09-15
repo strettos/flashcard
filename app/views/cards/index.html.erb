@@ -1,8 +1,12 @@
 <section id="container">
     <% @cards.each do |card| %>
     <ul>
-       <li><%= card.original_text %></li>
+      <li><%= card.original_text %></li>
       <li><%= card.translated_text %></li>
+      <ul>
+          <li><%= link_to 'Редактировать', edit_card_path(card) %></li>
+          <li><%= link_to 'Удалить', card_path(card), method: :delete, data: {confirm: 'Удалить?'} %></li>
+        </ul>
     </ul>
   <% end %>
 </section>

@@ -1,0 +1,30 @@
+<%= form_for @card  do |f| %>
+  <% if @card.errors.any? %>
+    <div>
+    <h2>ой, что-то случилось..</h2>
+      <ul>
+        <% @card.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <section>
+    <%= f.label :original_text %><br>
+    <%= f.text_field :original_text %>
+  </section>
+
+  <section>
+    <%= f.label :translated_text %><br>
+    <%= f.text_field :translated_text %>
+  </section>
+
+  <section>
+    <%= f.label :review_date %><br>
+    <%= date_select(:card, :review_date, start_year: Date.today.year) %>
+  </section>
+    
+  <section>
+    <%= f.submit %>
+  </section>
+<% end %>
