@@ -3,7 +3,6 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
-    @r_cards = Card.get_review(Date.today)
   end
 
   def welcome

@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @cards = Card.get_review(Date.today)
+    @card = Card.get_review(Date.today).first
   end
 end

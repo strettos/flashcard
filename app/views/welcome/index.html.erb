@@ -12,13 +12,11 @@
     </section>
   </section>
   <section>
-    <% if @cards %>
-        <% @cards.each do |card| %>
+    <% if @card %>
         <ul>
-          <li><%= card.original_text %></li>
-          <li><%= card.translated_text %></li>
+          <li><%= @card.original_text %></li>
+          <li><%= @card.translated_text %></li>
       </ul>
-      <% end %>
       <% end %>   
   </section>
 </body>

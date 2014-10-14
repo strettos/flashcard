@@ -4,10 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 def index
-    @cards = Card.get_review(Date.today)
+    @card = Card.get_review(Date.today).First
   end
-  
-  def get_review_cards
-    @cards = Card.get_review(Date.today)
-  end
+
 end
