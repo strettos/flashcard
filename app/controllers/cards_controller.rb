@@ -3,8 +3,11 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
+    @r_cards = Card.get_review(Date.today)
   end
 
+  def welcome
+  end
   def new
     @card = Card.new
   end
@@ -39,6 +42,10 @@ class CardsController < ApplicationController
     @card.destroy
 
     redirect_to cards_path
+  end
+
+  def get_review_cards
+    @cards = Card.get_review(Date.today)
   end
 
   private
