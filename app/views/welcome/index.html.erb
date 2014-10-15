@@ -13,10 +13,11 @@
   </section>
   <section>
     <% if @card %>
-        <ul>
-          <li><%= @card.original_text %></li>
-          <li><%= @card.translated_text %></li>
-      </ul>
-      <% end %>   
+      <%= form_for @card, url: {action: "review", :controller => "cards"} do |f| %>
+          <ul>
+            <%= @card.original_text %>
+          </ul>
+        <% end %>   
+      <% end %> 
   </section>
 </body>
