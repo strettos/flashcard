@@ -1,12 +1,10 @@
 class CardsController < ApplicationController
-  before_action :get_card, only: [:show, :edit, :update, :destroy]
+  before_action :get_card, only: [:show, :edit, :update, :destroy, :review]
 
   def index
     @cards = Card.all
   end
 
-  def welcome
-  end
   def new
     @card = Card.new
   end
@@ -44,15 +42,12 @@ class CardsController < ApplicationController
   end
 
   def review
-    @card = Card.find(params[:id])
     if @card.check_answer(params[:translated_text])
-      @card.set_review_date(@card)
       flash[:error] = "Правильный ответ!"
     else
       flash[:error] = "Неправильный ответ"
     end
-
-      redirect_to root_path
+    redirect_to root_path
   end
 
   private

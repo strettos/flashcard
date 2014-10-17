@@ -11,23 +11,24 @@
       </p>
     </section>
   </section>
-  <section>
+  <p>
     <% if @card %>
         <%= form_tag review_card_path(@card) do %>
-          <section>
+          <p>
             <%= @card.original_text %><br><br>
-          </section>
-           <section>
+          </p>
+           <p>
             перевод:
-          </section>
-          <section> 
+          </p>
+          <p> 
             <%= text_field_tag(:translated_text) %>
             <%= submit_tag("проверить") %>
-          </section> 
+          </p> 
         <% end %> 
-        <% flash.each do |key, msg| %>
-          <%= content_tag :div, msg, :id => key %>
-        <% end %>
+    <% else %>
+      <p>
+        Нет карточек для просмотра. Добавьте новые
+      </p>
       <% end %> 
-  </section>
+  </p>
 </body>
