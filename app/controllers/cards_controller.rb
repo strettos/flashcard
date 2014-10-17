@@ -43,11 +43,16 @@ class CardsController < ApplicationController
     redirect_to cards_path
   end
 
-  def get_review_cards
-    @cards = Card.get_review(Date.today)
-  end
-
   def review
+    @card = Card.find(params[:id])
+    if @card.check_answer(params[:translated_text])
+      @card.set_review_date(@card)
+      flash[:error] = "Правильный ответ!"
+    else
+      flash[:error] = "Неправильный ответ"
+    end
+
+      redirect_to root_path
   end
 
   private
