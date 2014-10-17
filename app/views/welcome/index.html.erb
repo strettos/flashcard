@@ -13,11 +13,9 @@
   </section>
   <section>
     <% if @card %>
-      <%= form_for @card, url: {action: "review", :controller => "cards"} do |f| %>
-          <ul>
-            <%= @card.original_text %>
-          </ul>
-        <% end %>   
+        <%= form_tag review_card_path(@card) do %>
+            qwerty
+        <% end %>  
       <% end %> 
   </section>
 </body>

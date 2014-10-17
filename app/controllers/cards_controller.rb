@@ -47,6 +47,9 @@ class CardsController < ApplicationController
     @cards = Card.get_review(Date.today)
   end
 
+  def review
+  end
+
   private
     def card_params
       params.require(:card).permit(:original_text, :translated_text, :review_date)
