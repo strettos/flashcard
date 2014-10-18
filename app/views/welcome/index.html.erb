@@ -11,4 +11,24 @@
       </p>
     </section>
   </section>
+  <p>
+    <% if @card %>
+        <%= form_tag review_card_path(@card) do %>
+          <p>
+            <%= @card.original_text %><br><br>
+          </p>
+           <p>
+            перевод:
+          </p>
+          <p> 
+            <%= text_field_tag(:translated_text) %>
+            <%= submit_tag("проверить") %>
+          </p> 
+        <% end %> 
+    <% else %>
+      <p>
+        Нет карточек для просмотра. Добавьте новые
+      </p>
+      <% end %> 
+  </p>
 </body>

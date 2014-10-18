@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :get_card, only: [:show, :edit, :update, :destroy]
+  before_action :get_card, only: [:show, :edit, :update, :destroy, :review]
 
   def index
     @cards = Card.all
@@ -39,6 +39,15 @@ class CardsController < ApplicationController
     @card.destroy
 
     redirect_to cards_path
+  end
+
+  def review
+    if @card.check_answer(params[:translated_text])
+      flash[:error] = "Правильный ответ!"
+    else
+      flash[:error] = "Неправильный ответ"
+    end
+    redirect_to root_path
   end
 
   private
