@@ -9,20 +9,20 @@
       </ul>
     </div>
   <% end %>
-  <section>
-    <%= f.label :original_text %><br>
+  <p>
+    <%= f.label :original_text %>
     <%= f.text_field :original_text %>
-  </section>
+  </p>
 
-  <section>
-    <%= f.label :translated_text %><br>
+  <p>
+    <%= f.label :translated_text %>
     <%= f.text_field :translated_text %>
-  </section>
+  </p>
 
-  <section>
-    <%= f.label :review_date %><br>
+  <p>
+    <%= f.label :review_date %>
     <%= date_select(:card, :review_date, start_year: Date.today.year) %>
-  </section>
+  </p>
     
   <section>
     <%= f.submit %>

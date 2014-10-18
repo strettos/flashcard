@@ -1,3 +1,7 @@
+/*
+*= require bootstrap
+*/
+
 #container {
   margin: 48px auto;
   width: 960px;
@@ -16,6 +20,9 @@
   }
 }
 
+#form_new {
+  margin: 48px auto;
+}
 .navigation-links {
   float: right;
 
@@ -25,6 +32,8 @@
   }
 }
 
-/* MISC */
 
+/* MISC */
+/*
 .clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} html[xmlns].clearfix{display:block;} * html .clearfix{height:1%;}
+*/
