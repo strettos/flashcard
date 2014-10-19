@@ -1,7 +1,18 @@
 <section id="container">
-    <ul>
-      <li><%= @card.original_text %></li>
-      <li><%= @card.translated_text %></li>
-      <li><%= @card.review_date %></li>
-    </ul>
+  <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Original text</th>
+      <th>Translated text</th>
+      <th>Review date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @card.original_text %></td>
+      <td><%= @card.translated_text %></td>
+      <td><%= @card.review_date %></td>
+    </tr>
+  </tbody>
+  </table> 
 </section>
