@@ -1,12 +1,22 @@
 <section id="container">
+  <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Original text</th>
+      <th>Translated text</th>
+      <th>Review date</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @cards.each do |card| %>
-    <ul>
-      <li><%= card.original_text %></li>
-      <li><%= card.translated_text %></li>
-      <ul>
-          <li><%= link_to 'Редактировать', edit_card_path(card) %></li>
-          <li><%= link_to 'Удалить', card_path(card), method: :delete, data: {confirm: 'Удалить?'} %></li>
-        </ul>
-    </ul>
-  <% end %>
+      <tr  class="success">
+      <td><%= card.original_text %></td>
+      <td><%= card.translated_text %></td>
+      <td><%= card.review_date %></td>
+      <td><%= link_to 'Редактировать', edit_card_path(card) %></td>
+      <td><%= link_to 'Удалить', card_path(card), method: :delete, data: {confirm: 'Удалить?'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
 </section>
