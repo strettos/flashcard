@@ -2,14 +2,16 @@ require 'rails_helper'
 
 describe Card do
 
-  it 'can check wrong translation' do
-    card = Card.new(original_text: "hause", translated_text: "дом")
-    expect(card.check_answer("врач")).to be false
-  end
+  context '#check_answer' do
+    it 'can check wrong translation' do
+      card = Card.new(original_text: "hause", translated_text: "дом")
+      expect(card.check_answer("врач")).to be false
+    end
 
-  it 'can check right translation' do
-    card = Card.new(original_text: "hause", translated_text: "дом")
-    expect(card.check_answer("дом")).to be true
+    it 'can check right translation' do
+      card = Card.new(original_text: "hause", translated_text: "дом")
+      expect(card.check_answer("дом")).to be true
+    end
   end
   
   context '#change_review_date' do
