@@ -21,4 +21,12 @@ describe Card do
       expect(card.review_date).to eq(Date.today + 3.days)
     end
   end
+
+  context '#review' do
+    it 'updates review date when correct answer' do
+      card = Card.new(original_text: "hause", translated_text: "дом")
+      card.check_answer("дом")
+      expect(card.review_date).to eq(Date.today + 3.days)
+    end
+  end
 end
