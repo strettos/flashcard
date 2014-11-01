@@ -8,8 +8,15 @@ describe 'Main Page' do
 
   it 'does test fail answer' do
     visit root_path
-    fill_in 'translated_text', :with => 'dfgdfg'
+    fill_in 'translated_text', with: 'dfgdfg'
     click_on 'проверить'
     expect(page).to have_content("Неправильный ответ")
+  end
+
+  it 'does test correct answer' do
+    visit root_path
+    fill_in 'translated_text', with: 'фабрика'
+    click_on 'проверить'
+    expect(page).to have_content("Правильный ответ!")
   end
 end
