@@ -1,8 +1,7 @@
 class Card < ActiveRecord::Base
   belongs_to :user
   
-  validates :original_text, presence: true, length: { minimum: 2 } 
-  validates :translated_text, presence: true, length: { minimum: 2 } 
+  validates :original_text, :translated_text, presence: true, length: { minimum: 2 } 
   validates :user_id, presence: true
 
   scope :for_review, -> (date) { where("review_date <= ?", date).order('RANDOM()') }
