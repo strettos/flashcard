@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe Card do
   before(:each) do
-   @card = Card.new(original_text: "hause", translated_text: "дом", review_date: "2014.01.01", user_id: "123")
- end
+    @card = Card.new(original_text: "hause", translated_text: "дом", review_date: "2014.01.01", user_id: "123")
+  end
   context '#check_answer' do
 
     it 'can check wrong translation' do
