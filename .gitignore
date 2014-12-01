@@ -12,6 +12,7 @@
 /db/*.sqlite3-journal
 /log/*.log
 /tmp
+/test
 database.yml
 doc/
 config/database.yml 
