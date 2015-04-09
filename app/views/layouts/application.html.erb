@@ -9,24 +9,29 @@
   <body>
   <section id="container">
       <header class="clearfix">
-        <h1><%= link_to 'Флэшкарточкер', root_path %> </h1>
-        <% if current_user %>
-          <ul class="navigation-links">
-            <li><%= link_to 'Все карточки', cards_path %> </li>
-            <li><%= link_to 'Добавить карточку', new_card_path %></li>
-          </ul>
-        <% end %>
+        <h1>Флэшкарточкер</h1>
       </header>
   </section>
+  <nav class="navbar navbar-inverse">
   <div id="nav">
+    <ul class="nav navbar-nav">
     <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
+
+      <li><%= link_to 'Все карточки', cards_path %> </li>
+      <li><%= link_to 'Добавить карточку', new_card_path %></li>
     <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
+      <li><%= link_to "Register", new_user_path %></li> |
+      <li><%= link_to "Login", :login %></li>
+    <% end %>
+    </ul>
+    <% if current_user %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Edit profile", edit_user_path(current_user.id) %></li>
+      <li><%= link_to "Logout", :logout, method: :post %></li>
+      </ul>
     <% end %>
   </div>
+</nav>
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>

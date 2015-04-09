@@ -1,7 +1,10 @@
 <section id="container">
-  <div class="jumbotron">
-    <h1>Login</h1>
-    <%= render 'form' %>
-    <%= link_to 'Back', user_sessions_path %>
-  </div>
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>Login</legend>
+      <div class="form-group">
+        <%= render 'form' %>
+      </div>
+  </fieldset>
+  </form>
 </section>
