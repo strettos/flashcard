@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+
   before_action :get_card, only: [:show, :edit, :update, :destroy, :review]
 
   def index
@@ -43,7 +44,7 @@ class CardsController < ApplicationController
 
   def review
     if @card.check_answer(params[:translated_text])
-      flash[:error] = "Правильный ответ!"
+      flash[:success] = "Правильный ответ!"
     else
       flash[:error] = "Неправильный ответ"
     end

@@ -1,6 +1,9 @@
 /*
 *= require bootstrap
 */
+body {
+background: url(../assets/bg.png);
+}
 
 #container {
   margin: 48px auto;

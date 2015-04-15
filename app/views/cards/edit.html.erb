@@ -1,7 +1,10 @@
 <section id="container">
-  <div class="jumbotron">
-    <h2>редактировать карточку</h2>
-
-    <%= render 'form', card: @card %>
+  <div class="form-horizontal">
+    <fieldset>
+      <legend>редактировать карточку</legend>
+      <div class="form-group">
+        <%= render 'form', card: @card %>
+      </div>
+  </fieldset>
   </div>
 </section>

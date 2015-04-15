@@ -1,6 +1,7 @@
 class Card < ActiveRecord::Base
   belongs_to :user
   
+
   validates :original_text, :translated_text, presence: true, length: { minimum: 2 } 
   validates :user_id, presence: true
 
@@ -17,4 +18,5 @@ class Card < ActiveRecord::Base
   def set_review_date
     update(review_date: Date.today + 3.days)
   end
+
 end
