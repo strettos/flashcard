@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
+  before_action :require_login
+
   protect_from_forgery with: :exception
+
+def not_authenticated
+  redirect_to login_url
+  flash[:warning] = "Пожалуйста, войдите в систему."
+end
+
 end

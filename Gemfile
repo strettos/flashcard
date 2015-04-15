@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 
 gem 'pg', '~> 0.17.1'
 
+gem 'sorcery'
+
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'capybara'

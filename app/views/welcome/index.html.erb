@@ -1,16 +1,5 @@
-<head>
-  <title>Флэшкарточкер</title>
-  <link rel="stylesheet" href="application.css">
-</head>
 
-<body>
   <section id="container">
-    <section>
-      <p style="font-size: 22px;">
-        Первый в мире удобный менеджер флеш-карточек. Именно так.
-      </p>
-    </section>
-  <p>
     <% if @card %>
         <%= form_tag review_card_path(@card) do %>
           <p>
@@ -29,6 +18,4 @@
         Нет карточек для просмотра. Добавьте новые
       </p>
       <% end %> 
-  </p>
   </section>
-</body>
